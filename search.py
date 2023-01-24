@@ -7,8 +7,8 @@ import markdown
 """
 
 Arxiv Sanity Preserver:
-1. Search for papers according to max_results
-2. Save results into json file that save all arxiv paper of past (papers overlaped with last day will be removed)
+1. Search for everyday papers according to max_results
+2. Update everyday results into json file that save all arxiv paper of past (papers overlaped with last day will be removed)
 3. Present json file into markdown file reversed by time
 
 Json_data: [{date:date1, papers: [{k1:v1, k2:v2, ...} ]}, {date:date2, papers: [{k1:v1, k2:v2, ...} ]}, ...]
@@ -250,8 +250,6 @@ if __name__ == "__main__":
     # update json data
     update_json_file(json_file, everyday_data)
     # json data to markdown
-    json_to_md(json_file)
-    # markdown to html
     json2html(json_file)
 
     # # update docs/index.md file
